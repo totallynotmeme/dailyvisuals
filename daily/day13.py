@@ -62,7 +62,8 @@ while run:
     for a in range(-6, 7): # don't say it
         direction = up.rotate(a * 10)
         pos_from = direction.normalize() * sun_radius + screen_center
-        pos_from += (a*50, window_size[1] // 2)
+        pos_from.x += a*50
+        pos_from.y = window_size[1]
         pos_to = direction + screen_center
         col = sun_ray_colors[a % len(sun_ray_colors)]
         pg.draw.line(canvas, col, pos_from, pos_to, 2)
