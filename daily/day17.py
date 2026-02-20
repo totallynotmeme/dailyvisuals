@@ -77,8 +77,8 @@ def gen_clouds():
     
     clouds = []
     for _ in range(15):
-        x = random.randint(150, window_size.x - 150)
-        y = random.randint(50, water_line - 50)
+        x = random.randint(150, int(window_size.x - 150)) # fix for https://github.com/totallynotmeme/dailyvisuals/issues/1
+        y = random.randint(50, int(water_line - 50))
         w = random.randint(75, 150)
         for i in range(w // 30):
             clouds.append(((x, y - i*15), (w - i*30, 20)))
